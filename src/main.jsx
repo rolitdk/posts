@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App.jsx";
 import { Posts } from "./pages/posts/index.jsx";
@@ -10,6 +11,7 @@ import { EditPost } from "./pages/posts/edit/index.jsx";
 import { AddPost } from "./pages/posts/add/index.jsx";
 import { Auth } from "./pages/auth/index.jsx";
 import { Registration } from "./pages/registration/index.jsx";
+import { store } from "./store/store.js";
 
 const router = createBrowserRouter([
   {
@@ -43,13 +45,15 @@ const router = createBrowserRouter([
       {
         path: "registration",
         element: <Registration />,
-      }
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 );
