@@ -11,7 +11,7 @@ import { EditPost } from "./pages/posts/edit/index.jsx";
 import { AddPost } from "./pages/posts/add/index.jsx";
 import { Auth } from "./pages/auth/index.jsx";
 import { Registration } from "./pages/registration/index.jsx";
-import { store } from "./store/store.js";
+import { store } from "./redux/store.js";
 
 const router = createBrowserRouter([
   {
