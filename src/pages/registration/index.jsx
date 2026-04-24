@@ -1,1 +1,1 @@
-export const Registration = () => <>Это страничка регистрации</>
+export const RegistrationPage = () => <>Это страничка регистрации</>
