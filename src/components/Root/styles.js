@@ -15,8 +15,8 @@ export const MenuItem = styled(NavLink)`
   text-decoration: none;
   color: black;
 
-  &.active{
-  color: darkred;
+  &.active {
+    color: darkred;
   }
 
   &:hover {
