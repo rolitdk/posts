@@ -5,6 +5,9 @@ export const Post = styled.div`
   flex-direction: column;
   gap: 15px;
   justify-content: space-between;
+  flex: 1 1;
+  min-width: 300px;
+  background-color:	#F5F5F5;
 `;
 
 export const Image = styled.img`
