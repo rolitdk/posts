@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/ui/Container";
 import { Field } from "../../components/ui/Field";
 import { Form } from "../../components/ui/Form";
 import { Input } from "../../components/ui/Input";
 import { Typo } from "../../components/ui/Typo";
-import { useNavigate } from "react-router-dom";
 
 export const RegistrationPage = () => {
   const [formValues, setFormValues] = useState({
@@ -16,12 +16,9 @@ export const RegistrationPage = () => {
 
   const navigate = useNavigate();
 
-  const onChange = (name, value) => {
-    setFormValues({ ...formValues, [name]: value });
-  };
-
   const onSubmit = (e) => {
     e.preventDefault();
+    
     try {
       const users = JSON.parse(localStorage.getItem("users"));
       const userId = Date.now();
@@ -49,6 +46,10 @@ export const RegistrationPage = () => {
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const onChange = (name, value) => {
+    setFormValues({ ...formValues, [name]: value });
   };
 
   const disabled = !formValues.email || !formValues.password;
