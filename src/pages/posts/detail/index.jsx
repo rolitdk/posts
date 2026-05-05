@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Typo } from "../../../components/Typo";
-import { Container } from "../../../components/Container";
-import { Link } from "../../../components/Link";
+import { Typo } from "../../../components/ui/Typo";
+import { Container } from "../../../components/ui/Container";
+import { Link } from "../../../components/ui/Link";
 import {
   getPostById,
   showPost,
@@ -79,9 +79,11 @@ export const DetailPostPage = () => {
       <SC.LinkWrapper>
         <Link to="/posts/">Обратно к публикациям</Link>
         {list && <Link to={`/posts/${post.id}/edit`}>Редактировать</Link>}
-        {list && <SC.DeleteButton onClick={() => setPostForDelete(post)}>
-          Удалить
-        </SC.DeleteButton>}
+        {list && (
+          <SC.DeleteButton onClick={() => setPostForDelete(post)}>
+            Удалить
+          </SC.DeleteButton>
+        )}
       </SC.LinkWrapper>
     </Container>
   );
